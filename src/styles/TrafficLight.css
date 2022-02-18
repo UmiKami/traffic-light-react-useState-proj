@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -100,4 +102,30 @@ html{
 }
 .selected-green{
     box-shadow: 0 0 2rem 2.5rem #48ff00;
+}
+
+.btn{
+    margin: 1rem 0 1rem 0;
+    width: 20rem;
+    height: 5rem;
+    
+    border: 1px solid white;
+    border-radius: 50px;
+
+    font-family: 'Roboto';
+    font-weight: medium;
+    font-size: 2.4rem;
+    color: white;
+
+	background: linear-gradient(45deg, #6ee1fa, #00c7ff, #32a4ff, #9374fe, #d300c1)
+}
+
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0px 30px rgb(255, 255, 255);
+    transition: all .1s ease-in-out;
+}
+.btn:active{
+    cursor: pointer;
+    box-shadow: 0 0px 4px rgb(255, 255, 255);
 }

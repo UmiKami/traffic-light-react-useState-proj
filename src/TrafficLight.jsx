@@ -3,23 +3,22 @@ import { useState } from 'react';
 
 const TrafficLight = () => {
 	const [ color, setColor ] = useState(null);
+    let clickedOnce = 0
 
 	const cycleColor = (run) => {
-        if(run == true){
+        if(run){
             let counter = 0;
     
             setInterval(() => {
                 counter++;
-                if (counter % 3 == 1) {
+                if (counter % 3 === 1) {
                     setColor('red');
-                } else if (counter % 3 == 2) {
+                } else if (counter % 3 === 2) {
                     setColor('yellow');
-                } else if (counter % 3 == 0) {
+                } else if (counter % 3 === 0) {
                     setColor('green');
                 }
             }, 1000);
-        }else{
-            return null
         }
 	};
 
@@ -40,7 +39,10 @@ const TrafficLight = () => {
 					onClick={() => setColor('green')}
 				/>
 			</div>
-			<button className="btn" onClick={() => cycleColor(true)}>
+			<button className="btn" onClick={() => {
+                clickedOnce++
+                clickedOnce > 1 ? cycleColor(false) : cycleColor(true)
+            }}>
 				Cycle
 			</button>
 		</div>
