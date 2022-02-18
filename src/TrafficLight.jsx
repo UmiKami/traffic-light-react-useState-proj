@@ -3,11 +3,12 @@ import { useState } from 'react';
 
 const TrafficLight = () => {
 	const [ color, setColor ] = useState(null);
-    let clickedOnce = 0
+    const [clickNum, setClickNum] = useState(0)
 
 	const cycleColor = (run) => {
         if(run){
             let counter = 0;
+            setClickNum((prevState) => {return prevState+1})
     
             setInterval(() => {
                 counter++;
@@ -40,8 +41,7 @@ const TrafficLight = () => {
 				/>
 			</div>
 			<button className="btn" onClick={() => {
-                clickedOnce++
-                clickedOnce > 1 ? cycleColor(false) : cycleColor(true)
+                clickNum > 1 ? cycleColor(false) : cycleColor(true)
             }}>
 				Cycle
 			</button>
