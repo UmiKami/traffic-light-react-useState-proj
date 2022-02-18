@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+	background: linear-gradient(-45deg, #b600fa, #ca00f1, #dc00e7, #ec00dd, #fa00d2, #ff00c7, #ff00bc, #ff00b1, #ff00a5, #ff009a, #ff008e, #ff0082, #ff0077, #ff006b, #ff0060, #ff0055, #ff0049, #ff003d, #ff2b30, #ff4221, #ff5409, #ff6300, #ff7000, #ff7d00, #ff8800, #ff9300, #ff9d00, #ffa700, #ffb000, #ffb800, #f6c100, #edc900, #e3d000, #d8d800, #cddf00, #c2e500, #b6ec00, #a8f200, #9af800, #8afe00);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.hanging-cord{
+    border: .2rem solid rgb(255, 255, 255);
+    border-bottom: 0;
+    background: black;
+    width: 5rem;
+    height: 20rem;
+
+    animation: gradient 15s ease infinite;;
+    background: linear-gradient(-45deg, #c7007d, #c4007e, #c20080, #bf0081, #bc0083, #b90085, #b60086, #b30088, #af008a, #ac008b, #a8008d, #a4008f, #a00091, #9c0093, #970095, #920097, #8d0099, #88009b, #83009c, #7d009e, #7700a0, #7000a2, #6900a4, #6100a6, #5900a8, #4f00aa, #4400ac, #3700ae, #2600af, #0002b1);
+}
+
+.light-container{
+    border: .2rem solid rgb(255, 255, 255);
+    background-color: black;
+    height: 70rem;
+    width: 35rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+	animation: gradient 15s ease infinite;;
+    background: linear-gradient(-45deg, #c7007d, #c4007e, #c20080, #bf0081, #bc0083, #b90085, #b60086, #b30088, #af008a, #ac008b, #a8008d, #a4008f, #a00091, #9c0093, #970095, #920097, #8d0099, #88009b, #83009c, #7d009e, #7700a0, #7000a2, #6900a4, #6100a6, #5900a8, #4f00aa, #4400ac, #3700ae, #2600af, #0002b1);
+	background-size: 400% 400%;
+
+}
+
+.light{
+    border: .2rem solid rgb(255, 255, 255);
+}
+
+.red-light{
+    border-radius: 1000rem;
+    width: 20rem;
+    height: 20rem;
+    background: red;
+}
+.yellow-light{
+    border-radius: 1000rem;
+    width: 20rem;
+    height: 20rem;
+    background: yellow;
+}
+.green-light{
+    border-radius: 1000rem;
+    width: 20rem;
+    height: 20rem;
+    background: green;
+}
+
+.selected-red{
+    box-shadow: 0 0 2rem 2.5rem #fd9071;
+}
+.selected-yellow{
+    box-shadow: 0 0 2rem 2.5rem #dffd71;
+}
+.selected-green{
+    box-shadow: 0 0 2rem 2.5rem #48ff00;
+}
