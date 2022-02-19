@@ -44,20 +44,22 @@ html{
 
 
 .hanging-cord{
+    transform: scale(1.4);
     border: .2rem solid rgb(255, 255, 255);
     border-bottom: 0;
     background: black;
     width: 5rem;
     height: 20rem;
-
+    
     animation: gradient 15s ease infinite;;
     background: linear-gradient(-45deg, #c7007d, #c4007e, #c20080, #bf0081, #bc0083, #b90085, #b60086, #b30088, #af008a, #ac008b, #a8008d, #a4008f, #a00091, #9c0093, #970095, #920097, #8d0099, #88009b, #83009c, #7d009e, #7700a0, #7000a2, #6900a4, #6100a6, #5900a8, #4f00aa, #4400ac, #3700ae, #2600af, #0002b1);
 }
 
 .light-container{
+    transform: scale(0.9);
     border: .2rem solid rgb(255, 255, 255);
     background-color: black;
-    height: 70rem;
+    min-height: 70rem;
     width: 35rem;
 
     display: flex;
@@ -93,6 +95,12 @@ html{
     height: 20rem;
     background: green;
 }
+.purple-light{
+    border-radius: 1000rem;
+    width: 20rem;
+    height: 20rem;
+    background: purple;
+}
 
 .selected-red{
     box-shadow: 0 0 2rem 2.5rem #fd9071;
@@ -102,6 +110,16 @@ html{
 }
 .selected-green{
     box-shadow: 0 0 2rem 2.5rem #48ff00;
+}
+.selected-purple{
+    box-shadow: 0 0 2rem 2.5rem #d963f7;
+}
+
+
+.controls{
+    width: 45rem;
+    display: flex;
+    justify-content: space-around;
 }
 
 .btn{
