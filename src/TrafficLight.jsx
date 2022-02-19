@@ -1,77 +1,75 @@
-import './styles/TrafficLight.css';
-import { useState } from 'react';
+import "./styles/TrafficLight.css";
+import { useState } from "react";
+
+const LightBulb = (props) => {
+  return (
+    <div
+      className={`${props.targetColor}-light light ${props.color === props.targetColor ? "selected-" + props.targetColor : null}`}
+      key={props.key}
+    />
+  );
+};
 
 const TrafficLight = () => {
-	const [ color, setColor ] = useState(null);
-	const [ clickNum, setClickNum ] = useState(0);
+  const [color, setColor] = useState(null);
+  const [clickNum, setClickNum] = useState(0);
+  const [lights, setLights] = useState([
+    "red",
+    "yellow",
+    "green",
+  ]);
+  const [render, rerender] = useState(true);
 
-	const cycleColor = (run) => {
-		if (run) {
-			let counter = 0;
-			setClickNum((prevState) => {
-				return prevState + 1;
-			});
+  const addLight = () => {
+    let newLights = lights;
+    newLights.push(
+		"purple"
+    );
+    setLights(newLights);
+	rerender(!render);
+  };
 
-			setInterval(() => {
-				counter++;
-				if (counter % 3 === 1) {
-					setColor('red');
-				} else if (counter % 3 === 2) {
-					setColor('yellow');
-				} else if (counter % 3 === 0) {
-					setColor('green');
-				}
-			}, 1000);
-		}
-	};
+  const cycleColor = (run) => {
+    if (run) {
+      let counter = 0;
+      setClickNum((prevState) => {
+        return prevState + 1;
+      });
 
-	const addLight = () => {
-		lightsArr.push(
-			<div
-				className={`purple-light light ${color === 'purple' ? 'selected-purple' : null}`}
-				onClick={() => setColor('purple')}
-                key={4}
-			/>
-		);
-	};
+      setInterval(() => {
+        counter++;
+        if (counter % 3 === 1) {
+          setColor("red");
+        } else if (counter % 3 === 2) {
+          setColor("yellow");
+        } else if (counter % 3 === 0) {
+          setColor("green");
+        }
+      }, 1000);
+    }
+  };
 
-
-
-	const lightsArr = [
-		<div
-			className={`red-light light ${color === 'red' ? 'selected-red' : null}`}
-			onClick={() => setColor('red')}
-            key={1}
-		/>,
-		<div
-			className={`yellow-light light ${color === 'yellow' ? 'selected-yellow' : null}`}
-			onClick={() => setColor('yellow')}
-            key={2}
-		/>,
-		<div
-			className={`green-light light ${color === 'green' ? 'selected-green' : null}`}
-			onClick={() => setColor('green')}
-            key={3}
-		/>
-	];
-
-	return (
-		<div className="main-container">
-			<div className="hanging-cord" />
-			<div className="light-container">{lightsArr}</div>
-			<section className="controls">
-				<button
-					className="btn"
-					onClick={() => {
-						clickNum > 1 ? cycleColor(false) : cycleColor(true);
-					}}
-				>
-					Cycle
-				</button>
-                <button className="btn" onClick={()=>addLight}></button>
-			</section>
-		</div>
-	);
+  return (
+    <div className="main-container">
+      <div className="hanging-cord" />
+      <div className="light-container">{lights.map((lightColor, idx) => {
+		  return <LightBulb color={color} targetColor={lightColor} key={idx}/>
+	  })}</div>
+      <section className="controls">
+        <button
+          className="btn"
+          onClick={() => {
+            clickNum > 1 ? cycleColor(false) : cycleColor(true);
+          }}
+        >
+          Cycle
+        </button>
+        <button className="btn" onClick={() => {
+			addLight();
+		}}></button>
+      </section>
+    </div>
+  );
 };
 
 export default TrafficLight;
