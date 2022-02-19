@@ -25,6 +25,16 @@ const TrafficLight = () => {
 		}
 	};
 
+	const addLight = () => {
+		lightsArr.push(
+			<div
+				className={`purple-light light ${color === 'purple' ? 'selected-purple' : null}`}
+				onClick={() => setColor('purple')}
+                key={4}
+			/>
+		);
+	};
+
 	const lightsArr = [
 		<div
 			className={`red-light light ${color === 'red' ? 'selected-red' : null}`}
@@ -42,7 +52,6 @@ const TrafficLight = () => {
             key={3}
 		/>
 	];
-
 
 	return (
 		<div className="main-container">
