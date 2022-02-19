@@ -68,7 +68,9 @@ const TrafficLight = () => {
 				>
 					Cycle
 				</button>
-                <button className="btn" onClick={()=>addLight}></button>
+                <button className="btn" onClick={()=>addLight}>
+                    Add Light
+                </button>
 			</section>
 		</div>
 	);
