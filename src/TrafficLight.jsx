@@ -25,15 +25,15 @@ const TrafficLight = () => {
 		}
 	};
 
-	const addLight = () => {
-		lightsArr.push(
-			<div
-				className={`purple-light light ${color === 'purple' ? 'selected-purple' : null}`}
-				onClick={() => setColor('purple')}
-                key={4}
-			/>
-		);
-	};
+	// const addLight = () => {
+	// 	lightsArr.push(
+	// 		<div
+	// 			className={`purple-light light ${color === 'purple' ? 'selected-purple' : null}`}
+	// 			onClick={() => setColor('purple')}
+    //             key={4}
+	// 		/>
+	// 	);
+	// };
 
 	const lightsArr = [
 		<div
